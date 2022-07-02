@@ -1,0 +1,16 @@
+GET http://localhost:8000/ HTTP/1.1
+
+###
+
+GET http://localhost:8000/getTodos HTTP/1.1
+
+###
+
+POST http://localhost:8000/createTodo HTTP/1.1
+content-type: application/json
+
+{
+    "title": "practice coding",
+    "description":"practice nodejs coding for 3 yours from 2:00pm",
+    "timestamp": "30/06/2022 7:30pm"
+}
