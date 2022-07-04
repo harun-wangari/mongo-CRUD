@@ -12,5 +12,25 @@ content-type: application/json
 {
     "title": "practice coding",
     "description":"practice nodejs coding for 3 yours from 2:00pm",
-    "timestamp": "30/06/2022 7:30pm"
+    "timestamp": "01/07/2022"
+}
+
+###
+
+POST http://localhost:8000/getOneTodo HTTP/1.1
+content-type: application/json
+
+{
+    "id": "62c1d1403d0ef09048ce1a0e"
+}
+
+###
+
+POST http://localhost:8000/updateTodo HTTP/1.1
+content-type: application/json
+
+{
+    "title": "practice nodejs coding",
+    "description":"practice nodejs coding for 3 yours from 2:00pm",
+    "timestamp": "03/07/2022"
 }
