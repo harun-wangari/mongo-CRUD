@@ -22,10 +22,9 @@ exports.getTodos = async (req,res) => {
         }
     })
    
-}
+};
 
 exports.getOneTodo = async (req,res) => {
-    console.log('get one todo')
     Todo.findById(req.body.id, (err,todo) => {
         if(err){
             console.error(err)
@@ -34,18 +33,18 @@ exports.getOneTodo = async (req,res) => {
         }
     })
    
-}
+};
 
 exports.updateTodo = async (req,res) => {
-    Todo.findByIdAndUpdate(req.body.id,{title:req.title,description:req.description,timestamp:req.timestamp}, (err,todo) => {
+    Todo.findByIdAndUpdate(req.body.id,{title:req.body.title,description:req.body.description,timestamp:req.body.timestamp}, (err) => {
         if(err){
             console.error(err) 
         }else{ 
-            res.status(200).json({msg:'todo updated',todo:todo})
+            res.status(200).json({msg:'todo updated'})
         }
     })
    
-}
+};
 
 exports.createTodo = async (req,res) => {
     try {
@@ -60,4 +59,19 @@ exports.createTodo = async (req,res) => {
     } catch (error) {
         res.status(500).json({msg:error.message})
     }
-}
+};
+
+exports.deleteTodo = async (req,res) => {
+    try {
+       Todo.findByIdAndRemove(req.body.id,(err,todo) => {
+            if(err){
+                console.error(' todo not deleted: ',err) 
+            }else{
+                res.status(200).json({msg:'todo has been Deleted: '})
+            }
+       })
+        
+    } catch (error) {
+        res.status(500).json({msg:error.message})
+    }
+};

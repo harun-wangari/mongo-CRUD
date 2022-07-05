@@ -2,11 +2,11 @@ GET http://localhost:8000/ HTTP/1.1
 
 ###
 
-GET http://localhost:8000/getTodos HTTP/1.1
+GET http://localhost:8000/Todos/getTodos HTTP/1.1
 
 ###
 
-POST http://localhost:8000/createTodo HTTP/1.1
+POST http://localhost:8000/Todos/createTodo HTTP/1.1
 content-type: application/json
 
 {
@@ -17,20 +17,30 @@ content-type: application/json
 
 ###
 
-POST http://localhost:8000/getOneTodo HTTP/1.1
+POST http://localhost:8000/Todos/getOneTodo HTTP/1.1
 content-type: application/json
 
 {
-    "id": "62c1d1403d0ef09048ce1a0e"
+    "id": "62c1d5ecb2b54ed25b54a96c"
 }
 
 ###
 
-POST http://localhost:8000/updateTodo HTTP/1.1
+POST http://localhost:8000/Todos/updateTodo HTTP/1.1
 content-type: application/json
 
 {
-    "title": "practice nodejs coding",
-    "description":"practice nodejs coding for 3 yours from 2:00pm",
+    "id": "62c1d5ecb2b54ed25b54a96c",
+    "title": "practice design with figma",
+    "description":"practice figma designnodejs coding for 4 yours from 2:00pm",
     "timestamp": "03/07/2022"
+}
+
+###
+
+POST http://localhost:8000/Todos/deleteTodo HTTP/1.1
+content-type: application/json
+
+{
+    "id": "62c1d812180bb214895d1c5d"
 }
